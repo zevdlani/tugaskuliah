@@ -1,8 +1,9 @@
-<?php 
-
+<?php
 	function register_user($user, $pass, $mail){
-
 		global $fxnt;
+
+		$user = strtolower($user);
+		$mail = strtolower($mail);
 
 		$user = mysqli_real_escape_string($fxnt, $user);
 		$pass = mysqli_real_escape_string($fxnt, $pass);
