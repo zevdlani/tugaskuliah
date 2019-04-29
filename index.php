@@ -1,3 +1,10 @@
+<?php
+  require_once "inc/core.php";
+
+  if( isset($_SESSION['dat_user']) ){
+    header('Location: dashboard.php');
+  }
+?>
 <?php include ('header.php'); ?>
     <!-- Konten Utama -->
     <div class="maindex">
