@@ -1,0 +1,48 @@
+/*
+Theme Name: TugasKuliah
+Theme URI: foxnetis
+Description: website for upload files.
+Version: 0.1
+Text Domain: foxnetis
+*/
+
+.upload {
+  max-width: 700px;
+  background: #c1c1c1;
+  padding: 100px 0;
+  color: #fff;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  margin-bottom: 300px;
+  text-align: center;
+  border: 1px solid #c7c7c7;
+}
+
+.kotak{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  margin-bottom: 300px;
+  max-width: 320px;
+  background: #c1c1c1;
+  padding: 50px 0;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+}
+
+.kotak-form{
+  margin: 0 30px;
+}
+
+.reglog a{
+  text-decoration: none;
+  color: #6b6b6b;
+}
+
+.reglog a:hover{
+  color: #525252;
+}
