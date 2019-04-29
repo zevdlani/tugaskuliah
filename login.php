@@ -3,7 +3,7 @@
 	require_once "inc/core.php";
 
 	if( isset($_SESSION['dat_user']) ){
-	 header('Location: inc/dashboard.php');
+	 header('Location: dashboard.php');
 	}
 
 	if( isset($_POST['submit'])){
@@ -14,7 +14,7 @@
 
 			if(cek_data($user, $pass)) {
 				$_SESSION['dat_user'] = $user;
-				header('Location: inc/dashboard.php');
+				header('Location: dashboard.php');
 			} else {
 				echo "Password salah";
 			}
