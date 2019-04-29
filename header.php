@@ -16,12 +16,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            <?php if( !isset($_SESSION['dat_user']) ){ ?>
             <li class="nav-item">
               <a class="nav-link" href="login.php">Masuk</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="register.php">Daftar</a>
-            </li>
+            </li><?php } ?>
+            <?php if( isset($_SESSION['dat_user']) ){ ?>
+            <li class="nav-item">
+              <a class="nav-link" href="inc/logout.php">Keluar</a>
+            </li><?php } ?>
             <li class="nav-item">
               <a class="nav-link" href="gambar.php">Gambar</a>
             </li>

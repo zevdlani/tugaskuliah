@@ -18,9 +18,8 @@
 			} else {
 				echo "Password salah";
 			}
-
 		} else {
-			echo "Username belum terdaftar";
+			echo "Username salah";
 		}
 	}
 

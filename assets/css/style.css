@@ -46,3 +46,31 @@ Text Domain: foxnetis
 .reglog a:hover{
   color: #525252;
 }
+
+.garis-file{
+  border-bottom: 2px solid #ececec;
+}
+
+.img-post img{
+  width: 50%;
+  padding: 10px;
+}
+
+.video-post video{
+  width: 100%;
+  padding: 10px;
+}
+
+.maindex{
+  max-width: 700px;
+  padding: 100px 0;
+  color: rgba(0,123,255,.5);
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  text-align: center;
+  border: 1px solid #e4e4e4;
+  background: url('../images/bg.png') #f8f9fa no-repeat;
+}

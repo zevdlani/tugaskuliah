@@ -3,36 +3,24 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-md">
-        <small class="d-block mb-3 text-muted">&copy; <?php echo date('Y'); ?></small>
+        <small class="d-block mb-3 text-muted">Hak cipta &copy; <?php echo date('Y'); ?>, <a href="https://github.com/zevdlani/dev">TugasKuliah</a></small>
       </div>
       <div class="col-6 col-md">
-        <h5>Features</h5>
+        <h5>Navigasi</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Cool stuff</a></li>
-          <li><a class="text-muted" href="#">Random feature</a></li>
-          <li><a class="text-muted" href="#">Team feature</a></li>
-          <li><a class="text-muted" href="#">Stuff for developers</a></li>
-          <li><a class="text-muted" href="#">Another one</a></li>
-          <li><a class="text-muted" href="#">Last time</a></li>
+          <li><a class="text-muted" href="gambar.php">Gambar</a></li>
+          <li><a class="text-muted" href="doc.php">Dokumen</a></li>
+          <li><a class="text-muted" href="file.php">File Zip</a></li>
+          <li><a class="text-muted" href="video.php">Video</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Resource</a></li>
-          <li><a class="text-muted" href="#">Resource name</a></li>
-          <li><a class="text-muted" href="#">Another resource</a></li>
-          <li><a class="text-muted" href="#">Final resource</a></li>
-        </ul>
+        <h5>Dukungan File</h5>
+        <p>Unggah dengan format jpg, png, pdf, docx, zip, mkv, mp4, maksimal ukuran file 100mb</p>
       </div>
       <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Team</a></li>
-          <li><a class="text-muted" href="#">Locations</a></li>
-          <li><a class="text-muted" href="#">Privacy</a></li>
-          <li><a class="text-muted" href="#">Terms</a></li>
-        </ul>
+        <h5>Tentang</h5>
+        <p>Tugaskuliah merupkan file hosting gratis yang sedang dikembangkan, untuk media pembelajaran dan juga hiburan.</p>
       </div>
     </div>
   </div>

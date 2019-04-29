@@ -1,9 +1,13 @@
 <?php include ('header.php'); ?>
     <!-- Konten Utama -->
-    <div class="upload" id="upload">
-      <form action="inc/function.php" method="post" enctype="multipart/form-data">
-        <input class="btn btn-outline-secondary" type="file" name="file"><br>
-        <input class="btn btn-secondary mt-3" type="submit" name="submit" value="Upload">
-      </form>
+    <div class="maindex">
+      <div class="row">
+        <div class="col-6 sm">
+        </div>
+        <div class="col-6 sm">
+          <h2> Tugas Kuliah</h2>
+          <p>Upload Tugas Kalian</p>
+        </div>
+      </div>
     </div>
 <?php include ('footer.php'); ?>
