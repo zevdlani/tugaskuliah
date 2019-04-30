@@ -3,7 +3,7 @@
 	require_once "inc/core.php";
 
 	if( isset($_SESSION['dat_user']) ){
-	 header('Location: dashboard.php');
+	 header('Location: dashboard');
 	}
 
 	if( isset($_POST['submit'])){
@@ -14,7 +14,7 @@
 
 			if(cek_data($user, $pass)) {
 				$_SESSION['dat_user'] = $user;
-				header('Location: dashboard.php');
+				header('Location: dashboard');
 			} else {
 				echo "Password salah";
 			}
@@ -32,6 +32,6 @@
 				<input class="form-control mb-3" type="password" name="password" placeholder="Password">
 				<input class="btn btn-secondary mb-2" type="submit" name="submit" value="Login">
 			</form>
-			<div class="reglog mt-2">Belum punya akun? Silahkan <a href="register.php">Daftar</a></div>
+			<div class="reglog mt-2">Belum punya akun? Silahkan <a href="/register">Daftar</a></div>
 		</div>
 <?php include ('footer.php'); ?>

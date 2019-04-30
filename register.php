@@ -3,7 +3,7 @@
 	require_once "inc/core.php";
 
 	if( isset($_SESSION['dat_user']) ){
-	 header('Location: dashboard.php');
+	 header('Location: dashboard');
 	}
 
 	if( isset($_POST['submit'])){
@@ -23,7 +23,7 @@
 				  		if(register_user($user, $pass, $mail)){
 
 				  			echo "Selamat akun anda berhasil di daftarkan";
-								header('Location: login.php');
+								header('Location: login');
 
 				  		} else{
 				  			echo "Gagal daftar, Silahlan Coba lain kali";
@@ -57,7 +57,7 @@
 					<input class="form-control mb-3" type="email" name="email" placeholder="Email">
 					<input class="btn btn-secondary mb-2" type="submit" name="submit" value="Daftar">
 				</form>
-				<div class="reglog mt-2">Sudah punya akun? Silahkan <a href="login.php">Masuk</a></div>
+				<div class="reglog mt-2">Sudah punya akun? Silahkan <a href="/login">Masuk</a></div>
 			</div>
 		</div>
 <?php include ('footer.php'); ?>

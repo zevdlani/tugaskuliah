@@ -16,31 +16,35 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <?php if( !isset($_SESSION['dat_user']) ){ ?>
             <li class="nav-item">
-              <a class="nav-link" href="login.php">Masuk</a>
+              <a class="nav-link" href="gambar">Gambar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="register.php">Daftar</a>
-            </li><?php } ?>
-            <?php if( isset($_SESSION['dat_user']) ){ ?>
-            <li class="nav-item">
-              <a class="nav-link" href="inc/logout.php">Keluar</a>
-            </li><?php } ?>
-            <li class="nav-item">
-              <a class="nav-link" href="gambar.php">Gambar</a>
+              <a class="nav-link" href="doc">Dokumen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doc.php">Dokumen</a>
+              <a class="nav-link" href="file">File Zip</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="file.php">File Zip</a>
+              <a class="nav-link" href="video">Video</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="video.php">Video</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="container">
+		 </ul>
+		 <div class="ml-auto">
+		 	<ul class="navbar-nav">
+				<?php if( !isset($_SESSION['dat_user']) ){ ?>
+				<li class="nav-item">
+				  <a class="nav-link" href="login">Masuk</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="register"> Daftar</a>
+				</li><?php } ?>
+				<?php if( isset($_SESSION['dat_user']) ){pain?>
+				<li class="nav-item">
+				  <a class="nav-link" href="inc/logout">Keluar</a>
+				</li><?php } ?>
+			</ul>
+    	 </div>
+	   </div>
+   	  </div>
+   	</nav>
+   	<div class="container">

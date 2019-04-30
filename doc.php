@@ -1,4 +1,5 @@
-<?php require('header.php'); ?>
+<?php require_once "inc/core.php"; ?>
+<?php  include ('header.php'); ?>
 <div class="mb-4"></div>
     <?php
       $resource = opendir("upload/doc");
@@ -8,4 +9,4 @@
         }
       }
     ?>
-<?php require('footer.php'); ?>
+<?php include ('footer.php'); ?>

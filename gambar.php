@@ -1,4 +1,5 @@
-<?php require('header.php'); ?>
+<?php require_once "inc/core.php"; ?>
+<?php include ('header.php'); ?>
 <div class="mb-4"></div>
 <div class="img-post">
     <?php
@@ -10,4 +11,4 @@
       }
     ?>
 </div>
-<?php require('footer.php'); ?>
+<?php include ('footer.php'); ?>
