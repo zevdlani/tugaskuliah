@@ -1,7 +1,6 @@
 <?php
 
   $error = '';
-  $buflr = '';
 
   if( isset($_POST['submit']) ){
     $unik_f = md5(date('Y-m-d H:i:s:u'));
@@ -24,7 +23,7 @@
               $ubah_g = $ubah_g . "_" . $unik_f . ".jpg";
               }
               move_uploaded_file($lokasi_f, $ubah_g);
-              echo "Gambar berhasil unggah";
+              header('Location: gambar');
             break;
           case 'image/png':
             if(file_exists($ubah_g)){
@@ -32,7 +31,7 @@
               $ubah_g = $ubah_g . "_" . $unik_f . ".png";
               }
               move_uploaded_file($lokasi_f, $ubah_g);
-              echo "Gambar berhasil unggah";
+              header('Location: gambar');
             break;
           case 'application/pdf':
             if(file_exists($ubah_d)){
@@ -40,7 +39,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".pdf";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
-              echo "Dokumen berhasil unggah";
+              header('Location: doc');
             break;
           case 'application/octet-stream':
             if(file_exists($ubah_d)){
@@ -48,7 +47,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".docx";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
-              echo "Dokumen berhasil unggah";
+              header('Location: doc');
             break;
           case 'application/x-zip-compressed':
             if(file_exists($ubah_z)){
@@ -56,7 +55,7 @@
               $ubah_z = $ubah_z . "_" . $unik_f . ".zip";
               }
               move_uploaded_file($lokasi_f, $ubah_z);
-              echo "File berhasil unggah";
+              header('Location: file');
             break;
           case 'video/x-matroska':
             if(file_exists($ubah_v)){
@@ -64,7 +63,7 @@
               $ubah_v = $ubah_v . "_" . $unik_f . ".mkv";
               }
               move_uploaded_file($lokasi_f, $ubah_v);
-              echo "Video berhasil unggah";
+              header('Location: video');
             break;
           case 'video/mp4':
             if(file_exists($ubah_v)){
@@ -72,7 +71,7 @@
               $ubah_v = $ubah_v . "_" . $unik_f . ".mp4";
               }
               move_uploaded_file($lokasi_f, $ubah_v);
-              echo "Video berhasil unggah";
+              header('Location: video');
             break;
           default:
             $error = "Format tidak didukung";
