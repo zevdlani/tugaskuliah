@@ -1,7 +1,5 @@
 <?php
 
-  $error = '';
-
   if( isset($_POST['submit']) ){
     $unik_f = md5(date('Y-m-d H:i:s:u'));
     $nama_f = $_FILES['file']['name'];
@@ -74,13 +72,16 @@
               header('Location: ../video');
             break;
           default:
-            $error = "Format tidak didukung";
+            echo "Format file tidak didukung";
+            header('Location: ../dashboard');
       }
       } else {
-        $error = "Ukuran file terlalu besar";
+        echo "Ukuran file terlalu besar";
+        header('Location: ../dashboard');
       }
     } else {
-      $error = "Upload gagal";
+      echo "Gagal unggah";
+      header('Location: ../dashboard');
     }
   }
 ?>
