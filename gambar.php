@@ -6,7 +6,7 @@
     $resource = opendir("upload/img");
     while (($entry = readdir($resource)) !== false){
       if($entry != "." && $entry != ".."){
-        echo '<a href="/tugaskuliah/upload/img/'.$entry.'"><img src="/upload/img/'.$entry.'"></a>';
+        echo '<a href="/upload/img/'.$entry.'"><img src="/upload/img/'.$entry.'"></a>';
       }
     }
   ?>
