@@ -8,10 +8,23 @@
 
 ?>
 <?php include ('header.php'); ?>
-			<div class="upload" id="upload">
-				<form action="inc/function.php" method="post" enctype="multipart/form-data">
-					<input class="btn btn-outline-secondary" type="file" name="file"><br>
-					<input class="btn btn-secondary mt-3" type="submit" name="submit" value="Unggah">
-				</form>
+<?php include ('inc/upload.php'); ?>
+ <div class="kotak-upload">
+		<?php if($error != ''){ ?>
+			<div class="alert alert-danger text-center">
+				<?php echo $error; ?>
 			</div>
+		<?php } ?>
+		<?php if($buflr != ''){ ?>
+			<div class="alert alert-danger text-center">
+				<?php echo $buflr; ?>
+			</div>
+		<?php } ?>
+		<div class="upload text-center" id="upload">
+			<form action="dashboard" method="post" enctype="multipart/form-data">
+				<input class="btn btn-outline-secondary" type="file" name="file"><br>
+				<input class="btn btn-secondary mt-3" type="submit" name="submit" value="Unggah">
+			</form>
+		</div>
+	</div>
 <?php include ('footer.php'); ?>

@@ -2,6 +2,8 @@
 
 	require_once "inc/core.php";
 
+	$error = '';
+
 	if( isset($_SESSION['dat_user']) ){
 	 header('Location: dashboard');
 	}
@@ -13,44 +15,38 @@
 	  	$mail = $_POST['email'];
 
 	  	if( register_cek_user($user) ){
-
 	  		if($pass == $pasc){
-
 	  			if( register_cek_mail($mail) ){
-
 	  				if( !empty(trim($user)) && !empty(trim($pass)) && !empty(trim($mail)) ){
-
 				  		if(register_user($user, $pass, $mail)){
-
-				  			echo "Selamat akun anda berhasil di daftarkan";
 								header('Location: login');
-
 				  		} else{
-				  			echo "Gagal daftar, Silahlan Coba lain kali";
+				  			$error = "Gagal daftar, silahlan coba lagi";
 				  		}
-
-					} else{
-						echo "Data tidak boleh kosong :(";
+						} else{
+							$error = "Data tidak boleh kosong";
+						}
+					} else {
+						$error = "Email sudah digunakan";
 					}
-
-				} else {
-					echo "Email sudah digunakan :v";
+				} else{
+					$error = "Password tidak sama";
 				}
-
-			} else{
-				echo "Password tidak sama :p";
+			} else {
+				$error = "Username sudah digunakan";
 			}
-
-		} else {
-			echo "Username sudah digunakan :u";
 		}
-	}
 ?>
 <?php include ('header.php'); ?>
-    <!-- Konten Utama -->
+  <div class="kotak-besar">
+		<?php if($error != ''){ ?>
+			<div class="alert alert-danger text-center">
+				<?php echo $error; ?>
+			</div>
+		<?php } ?>
 		<div class="kotak">
 			<div class="kotak-form">
-				<form action="register.php" method="post">
+				<form action="register" method="post">
 					<input class="form-control mb-2" type="text" name="username" placeholder="Username">
 					<input class="form-control mb-2" type="password" name="password" placeholder="Password">
 					<input class="form-control mb-2" type="password" name="passworc" placeholder="Konfirmasi Password">
@@ -60,4 +56,5 @@
 				<div class="reglog mt-2">Sudah punya akun? Silahkan <a href="/login">Masuk</a></div>
 			</div>
 		</div>
+	</div>
 <?php include ('footer.php'); ?>

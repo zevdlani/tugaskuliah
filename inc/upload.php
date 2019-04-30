@@ -1,5 +1,8 @@
 <?php
 
+  $error = '';
+  $buflr = '';
+
   if( isset($_POST['submit']) ){
     $unik_f = md5(date('Y-m-d H:i:s:u'));
     $nama_f = $_FILES['file']['name'];
@@ -14,7 +17,6 @@
 
     if($error_f == 0){
       if($size_f <= 50000000){
-
         switch ($type_f) {
           case 'image/jpeg':
             if(file_exists($ubah_g)){
@@ -22,7 +24,7 @@
               $ubah_g = $ubah_g . "_" . $unik_f . ".jpg";
               }
               move_uploaded_file($lokasi_f, $ubah_g);
-              header('Location: ../gambar');
+              $buflr = '/upload/img/' . $ubah_g;
             break;
           case 'image/png':
             if(file_exists($ubah_g)){
@@ -30,7 +32,7 @@
               $ubah_g = $ubah_g . "_" . $unik_f . ".png";
               }
               move_uploaded_file($lokasi_f, $ubah_g);
-              header('Location: ../gambar');
+              $buflr = '/upload/img/' . $ubah_g;
             break;
           case 'application/pdf':
             if(file_exists($ubah_d)){
@@ -73,14 +75,13 @@
               header('Location: ../video');
             break;
           default:
-            echo "Format tidak didukung";
+            $error = "Format tidak didukung";
       }
-
       } else {
-        echo "Ukuran file terlalu besar";
+        $error = "Ukuran file terlalu besar";
       }
     } else {
-      echo "Upload gagal";
+      $error = "Upload gagal";
     }
   }
  ?>

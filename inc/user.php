@@ -19,7 +19,6 @@
 		}
 	}
 
-
 	function register_cek_user($user){
 		global $fxnt;
 
@@ -27,12 +26,10 @@
 
 		$query = "SELECT * FROM users WHERE username = '$user' ";
 
-
 		if( $result = mysqli_query($fxnt, $query) ){
 			if( mysqli_num_rows($result) == 0) return true;
-			else return false;
+				else return false;
 		}
-
 	}
 
 	function register_cek_mail($mail){
@@ -42,12 +39,10 @@
 
 		$query = "SELECT * FROM users WHERE email = '$mail' ";
 
-
 		if( $result = mysqli_query($fxnt, $query) ){
 			if( mysqli_num_rows($result) == 0) return true;
-			else return false;
+				else return false;
 		}
-
 	}
 
 	function cek_data($user, $pass){
@@ -75,11 +70,9 @@
 
 		$query = "SELECT * FROM users WHERE username = '$user' ";
 
-
 		if( $result = mysqli_query($fxnt, $query) ){
 			if( mysqli_num_rows($result) != 0) return true;
 				else return false;
 		}
-
 	}
 ?>
