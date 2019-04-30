@@ -16,7 +16,7 @@
 			</div>
 		<?php } ?>
 		<?php if($buflr != ''){ ?>
-			<div class="alert alert-danger text-center">
+			<div class="alert alert-success">
 				<?php echo $buflr; ?>
 			</div>
 		<?php } ?>
