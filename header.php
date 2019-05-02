@@ -29,6 +29,9 @@
             <li class="nav-item">
               <a class="nav-link" href="video">Video</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="apk">Apk</a>
+            </li>
 		      </ul>
 		      <div class="ml-auto">
 		 	      <ul class="navbar-nav">

@@ -12,6 +12,7 @@
           <li><a class="text-muted" href="doc">Dokumen</a></li>
           <li><a class="text-muted" href="file">File Zip</a></li>
           <li><a class="text-muted" href="video">Video</a></li>
+          <li><a class="text-muted" href="video">Apk</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">
