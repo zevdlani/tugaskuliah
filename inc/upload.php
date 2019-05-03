@@ -9,12 +9,12 @@
     $error_f = $_FILES['file']['error'];
     $format = pathinfo($nama_f, PATHINFO_EXTENSION);
     $ubah_g = '../upload/img/' . $nama_f;
+    $ubah_gl = '/upload/img/' . $nama_f;
     $ubah_d = '../upload/doc/' . $nama_f;
     $ubah_z = '../upload/zip/' . $nama_f;
     $ubah_v = '../upload/vid/' . $nama_f;
     $ubah_a = '../upload/apk/' . $nama_f;
 
-    print_r($_FILES);
     if($error_f == 0){
       if($size_f <= 50000000){
         switch ($format) {
@@ -50,6 +50,22 @@
               move_uploaded_file($lokasi_f, $ubah_d);
               header('Location: ../doc');
             break;
+          case 'xlsx':
+            if(file_exists($ubah_d)){
+              $ubah_d = str_replace(".xlsx", "", $ubah_d);
+              $ubah_d = $ubah_d . "_" . $unik_f . ".xlsx";
+              }
+              move_uploaded_file($lokasi_f, $ubah_d);
+              header('Location: ../doc');
+            break;
+          case 'pptx':
+            if(file_exists($ubah_d)){
+              $ubah_d = str_replace(".pptx", "", $ubah_d);
+              $ubah_d = $ubah_d . "_" . $unik_f . ".pptx";
+              }
+              move_uploaded_file($lokasi_f, $ubah_d);
+              header('Location: ../doc');
+          break;
           case 'zip':
             if(file_exists($ubah_z)){
               $ubah_z = str_replace(".zip", "", $ubah_z);
