@@ -21,27 +21,28 @@
 				  		if(register_user($user, $pass, $mail)){
 								header('Location: login');
 				  		} else{
-				  			$error = "Gagal daftar, silahlan coba lagi";
+				  			$_SESSION['error'] = "Gagal daftar, silahlan coba lagi";
 				  		}
 						} else{
-							$error = "Data tidak boleh kosong";
+							$_SESSION['error'] = "Data tidak boleh kosong";
 						}
 					} else {
-						$error = "Email sudah digunakan";
+						$_SESSION['error'] = "Email sudah digunakan";
 					}
 				} else{
-					$error = "Password tidak sama";
+					$_SESSION['error'] = "Password tidak sama";
 				}
 			} else {
-				$error = "Username sudah digunakan";
+				$_SESSION['error'] = "Username sudah digunakan";
 			}
 		}
 ?>
 <?php include ('header.php'); ?>
   <div class="kotak-besar">
-		<?php if($error != ''){ ?>
+		<?php if(isset($_SESSION['error'])){ ?>
 			<div class="alert alert-danger text-center">
-				<?php echo $error; ?>
+				<?php echo $_SESSION['error'];
+				unset($_SESSION['error']); ?>
 			</div>
 		<?php } ?>
 		<div class="kotak">

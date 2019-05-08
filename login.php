@@ -5,6 +5,7 @@
 	$error = '';
 
 	if( isset($_SESSION['dat_user']) ){
+	 $_SESSION['error'] = "Anda harus masuk terlebih dahulu"
 	 header('Location: dashboard');
 	}
 
