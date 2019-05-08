@@ -130,7 +130,7 @@
 ?>
 <?php include ('header.php'); ?>
 	<div class="kotak-upload">
-		<?php if(isset($error)){ ?>
+		<?php if($error != ''){ ?>
 			<div class="alert alert-danger text-center">
 				<?php echo $error; ?>
 			</div>
