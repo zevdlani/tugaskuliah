@@ -18,16 +18,16 @@
 				$_SESSION['dat_user'] = $user;
 				header('Location: dashboard');
 			} else {
-				$error = "Password salah!";
+				$_SESSION['error'] = "Password salah!";
 			}
 		} else {
-			$error = "Username salah!";
+			$_SESSION['error'] = "Username salah!";
 		}
 	}
 ?>
 <?php include ('header.php'); ?>
 	<div class="kotak-besar">
-		<?php if($error != ''){ ?>
+		<?php if(isset($_SESSION['error'])){ ?>
 			<div class="alert alert-danger text-center">
 				<?php echo $error; ?>
 			</div>
