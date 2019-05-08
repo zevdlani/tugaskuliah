@@ -4,30 +4,21 @@
 
 	$error = '';
 
-	if( isset($_SESSION['dat_user']) ){
-	 header('Location: dashboard');
-	}
+	if( isset($_SESSION['dat_user']) ) header('Location: dashboard');
 
-	if( isset($_POST['submit'])){
+	if( isset($_POST['submit']) ){
 	  	$user = $_POST['username'];
 	  	$pass = $_POST['password'];
-
-		if( login_cek_user($user) ) {
-
-			if(cek_data($user, $pass)) {
-				$_SESSION['dat_user'] = $user;
-				header('Location: dashboard');
-			} else {
-				$_SESSION['error'] = "Password salah!";
-			}
-		} else {
-			$_SESSION['error'] = "Username salah!";
-		}
+		if( cek_user($user) != 0) {
+			if( cek_data($user, $pass) ){
+				direct_login($user);
+			} else $_SESSION['error'] = "Password salah!";
+		} else $_SESSION['error'] = "Username salah!";
 	}
 ?>
 <?php include ('header.php'); ?>
 	<div class="kotak-besar">
-		<?php if(isset($_SESSION['error'])){ ?>
+		<?php if(isset($_SESSION['error']) ){ ?>
 			<div class="alert alert-danger text-center">
 				<?php echo $_SESSION['error'];
 				unset($_SESSION['error']); ?>

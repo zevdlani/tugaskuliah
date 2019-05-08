@@ -7,7 +7,7 @@
 	if( !isset($_SESSION['dat_user']) ){
 		$_SESSION['error'] = "Anda harus masuk terlebih dahulu";
 		header('Location: login');
- }
+ 	}
 
 ?>
 <?php
@@ -128,15 +128,10 @@
 								$_SESSION['upld'] = "Berhasil unggah $nama_f";
                 header('Location: apk');
             break;
-          default:
-            $error = "Format file tidak didukung";
-          }
-      } else {
-        $error = "Ukuran file terlalu besar";
-      }
-    } else {
-      $error = "Gagal unggah";
-    }
+          default: $error = "Format file tidak didukung";
+				}
+      } else $error = "Ukuran file terlalu besar";
+    } else $error = "Gagal unggah";
   }
 ?>
 <?php include ('header.php'); ?>

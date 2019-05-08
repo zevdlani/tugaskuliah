@@ -4,42 +4,30 @@
 
 	$error = '';
 
-	if( isset($_SESSION['dat_user']) ){
-	 header('Location: dashboard');
-	}
+	if( isset($_SESSION['dat_user']) ) header('Location: dashboard');
 
-	if( isset($_POST['submit'])){
+	if( isset($_POST['submit']) ){
 	  	$user = $_POST['username'];
 	  	$pass = $_POST['password'];
 	  	$pasc = $_POST['passworc'];
 	  	$mail = $_POST['email'];
 
-	  	if( register_cek_user($user) ){
+	  	if( cek_user($user) == 0){
 	  		if($pass == $pasc){
-	  			if( register_cek_mail($mail) ){
-	  				if( !empty(trim($user)) && !empty(trim($pass)) && !empty(trim($mail)) ){
+	  			if( cek_mail($mail) == 0){
+	  				if( !empty(trim($user) ) && !empty(trim($pass)) && !empty(trim($mail)) ){
 				  		if(register_user($user, $pass, $mail)){
 								header('Location: login');
-				  		} else{
-				  			$_SESSION['error'] = "Gagal daftar, silahlan coba lagi";
-				  		}
-						} else{
-							$_SESSION['error'] = "Tidak boleh ada yang kosong";
-						}
-					} else {
-						$_SESSION['error'] = "Email sudah digunakan";
-					}
-				} else{
-					$_SESSION['error'] = "Password tidak sama";
-				}
-			} else {
-				$_SESSION['error'] = "Username sudah digunakan";
-			}
+				  		} else $_SESSION['error'] = "Gagal daftar, silahlan coba lagi";
+						} else $_SESSION['error'] = "Tidak boleh ada yang kosong";
+					} else $_SESSION['error'] = "Email sudah digunakan";
+				} else $_SESSION['error'] = "Password tidak sama";
+			} else $_SESSION['error'] = "Username sudah digunakan";
 		}
 ?>
 <?php include ('header.php'); ?>
   <div class="kotak-besar">
-		<?php if(isset($_SESSION['error'])){ ?>
+		<?php if(isset($_SESSION['error']) ){ ?>
 			<div class="alert alert-danger text-center">
 				<?php echo $_SESSION['error'];
 				unset($_SESSION['error']); ?>
