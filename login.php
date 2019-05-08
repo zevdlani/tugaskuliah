@@ -29,7 +29,8 @@
 	<div class="kotak-besar">
 		<?php if(isset($_SESSION['error'])){ ?>
 			<div class="alert alert-danger text-center">
-				<?php echo $error; ?>
+				<?php echo $_SESSION['error'];
+				unset($_SESSION['error']); ?>
 			</div>
 		<?php } ?>
 		<div class="kotak">
