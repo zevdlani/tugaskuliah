@@ -5,7 +5,8 @@
 	$error = '';
 
 	if( !isset($_SESSION['dat_user']) ){
-	 header('Location: /');
+		$_SESSION['error'] = "Anda harus masuk terlebih dahulu"
+		header('Location: /');
  }
 
 ?>
