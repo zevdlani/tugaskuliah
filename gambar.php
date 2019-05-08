@@ -3,7 +3,7 @@
 <div class="mb-4"></div>
 <?php if(isset($_SESSION['upld'])){
   echo $_SESSION['upld'];
-  uset($_SESSION['upld']);
+  unset($_SESSION['upld']);
 } ?>
 <div class="img-post">
   <?php

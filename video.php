@@ -4,7 +4,7 @@
 <div class="video-post">
 <?php if(isset($_SESSION['upld'])){
   echo $_SESSION['upld'];
-  uset($_SESSION['upld']);
+  unset($_SESSION['upld']);
 } ?>
   <?php
     $resource = opendir("upload/vid");
