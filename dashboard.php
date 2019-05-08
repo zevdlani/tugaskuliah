@@ -19,12 +19,11 @@
     $type_f = $_FILES['file']['type'];
     $error_f = $_FILES['file']['error'];
     $format = pathinfo($nama_f, PATHINFO_EXTENSION);
-    $ubah_g = '../upload/img/' . $nama_f;
-    $ubah_gl = '/upload/img/' . $nama_f;
-    $ubah_d = '../upload/doc/' . $nama_f;
-    $ubah_z = '../upload/zip/' . $nama_f;
-    $ubah_v = '../upload/vid/' . $nama_f;
-    $ubah_a = '../upload/apk/' . $nama_f;
+    $ubah_g = 'upload/img/' . $nama_f;
+    $ubah_d = 'upload/doc/' . $nama_f;
+    $ubah_z = 'upload/zip/' . $nama_f;
+    $ubah_v = 'upload/vid/' . $nama_f;
+    $ubah_a = 'upload/apk/' . $nama_f;
 
     if($error_f == 0){
       if($size_f <= 50000000){
@@ -35,7 +34,7 @@
               $ubah_g = $ubah_g . "_" . $unik_f . ".jpg";
               }
               move_uploaded_file($lokasi_f, $ubah_g);
-              header('Location: ../gambar');
+              header('Location: gambar');
             break;
           case 'png':
             if(file_exists($ubah_g)){
@@ -43,7 +42,7 @@
               $ubah_g = $ubah_g . "_" . $unik_f . ".png";
               }
               move_uploaded_file($lokasi_f, $ubah_g);
-              header('Location: ../gambar');
+              header('Location: gambar');
             break;
           case 'pdf':
             if(file_exists($ubah_d)){
@@ -51,7 +50,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".pdf";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
-              header('Location: ../doc');
+              header('Location: doc');
             break;
           case 'docx':
             if(file_exists($ubah_d)){
@@ -59,7 +58,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".docx";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
-              header('Location: ../doc');
+              header('Location: doc');
             break;
           case 'xlsx':
             if(file_exists($ubah_d)){
@@ -67,7 +66,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".xlsx";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
-              header('Location: ../doc');
+              header('Location: doc');
             break;
           case 'pptx':
             if(file_exists($ubah_d)){
@@ -75,7 +74,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".pptx";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
-              header('Location: ../tugaskuliah/doc');
+              header('Location: doc');
           break;
           case 'zip':
             if(file_exists($ubah_z)){
@@ -83,7 +82,7 @@
               $ubah_z = $ubah_z . "_" . $unik_f . ".zip";
               }
               move_uploaded_file($lokasi_f, $ubah_z);
-              header('Location: ../file');
+              header('Location: file');
             break;
           case 'rar':
             if(file_exists($ubah_z)){
@@ -91,7 +90,7 @@
               $ubah_z = $ubah_z . "_" . $unik_f . ".rar";
               }
               move_uploaded_file($lokasi_f, $ubah_z);
-              header('Location: ../file');
+              header('Location: file');
             break;
           case 'mkv':
             if(file_exists($ubah_v)){
@@ -99,7 +98,7 @@
               $ubah_v = $ubah_v . "_" . $unik_f . ".mkv";
               }
               move_uploaded_file($lokasi_f, $ubah_v);
-              header('Location: ../video');
+              header('Location: video');
             break;
           case 'mp4':
             if(file_exists($ubah_v)){
@@ -107,7 +106,7 @@
               $ubah_v = $ubah_v . "_" . $unik_f . ".mp4";
               }
               move_uploaded_file($lokasi_f, $ubah_v);
-              header('Location: ../video');
+              header('Location: video');
             break;
             case 'apk':
               if(file_exists($ubah_a)){
@@ -115,7 +114,7 @@
                 $ubah_a = $ubah_a . "_" . $unik_f . ".apk";
                 }
                 move_uploaded_file($lokasi_f, $ubah_a);
-                header('Location: ../apk');
+                header('Location: apk');
             break;
           default:
             $error = "Format file tidak didukung";
