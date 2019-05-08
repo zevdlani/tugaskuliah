@@ -24,7 +24,7 @@
 				  			$_SESSION['error'] = "Gagal daftar, silahlan coba lagi";
 				  		}
 						} else{
-							$_SESSION['error'] = "Data tidak boleh kosong";
+							$_SESSION['error'] = "Tidak boleh ada yang kosong";
 						}
 					} else {
 						$_SESSION['error'] = "Email sudah digunakan";
