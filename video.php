@@ -1,11 +1,13 @@
 <?php require_once "inc/core.php"; ?>
 <?php include ('header.php'); ?>
-<div class="mb-4"></div>
+<div class="mb-3"></div>
+<?php if(isset($_SESSION['upld'])) { ?>
+  <div class="alert alert-success text-center">
+  <?php echo $_SESSION['upld'];
+  unset($_SESSION['upld']); ?>
+  </div>
+<?php } ?>
 <div class="video-post">
-<?php if(isset($_SESSION['upld'])){
-  echo $_SESSION['upld'];
-  unset($_SESSION['upld']);
-} ?>
   <?php
     $resource = opendir("upload/vid");
     while (($entry = readdir($resource)) !== false){
