@@ -2,6 +2,10 @@
 <?php include ('header.php'); ?>
 <div class="mb-4"></div>
 <div class="video-post">
+<?php if(isset($_SESSION['upld'])){
+  echo $_SESSION['upld'];
+  uset($_SESSION['upld']);
+} ?>
   <?php
     $resource = opendir("upload/vid");
     while (($entry = readdir($resource)) !== false){

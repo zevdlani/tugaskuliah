@@ -34,6 +34,7 @@
               $ubah_g = $ubah_g . "_" . $unik_f . ".jpg";
               }
               move_uploaded_file($lokasi_f, $ubah_g);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: gambar');
             break;
           case 'png':
@@ -42,6 +43,7 @@
               $ubah_g = $ubah_g . "_" . $unik_f . ".png";
               }
               move_uploaded_file($lokasi_f, $ubah_g);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: gambar');
             break;
           case 'pdf':
@@ -50,6 +52,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".pdf";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: doc');
             break;
           case 'docx':
@@ -58,6 +61,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".docx";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: doc');
             break;
           case 'xlsx':
@@ -66,6 +70,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".xlsx";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: doc');
             break;
           case 'pptx':
@@ -74,6 +79,7 @@
               $ubah_d = $ubah_d . "_" . $unik_f . ".pptx";
               }
               move_uploaded_file($lokasi_f, $ubah_d);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: doc');
           break;
           case 'zip':
@@ -82,6 +88,7 @@
               $ubah_z = $ubah_z . "_" . $unik_f . ".zip";
               }
               move_uploaded_file($lokasi_f, $ubah_z);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: file');
             break;
           case 'rar':
@@ -90,6 +97,7 @@
               $ubah_z = $ubah_z . "_" . $unik_f . ".rar";
               }
               move_uploaded_file($lokasi_f, $ubah_z);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: file');
             break;
           case 'mkv':
@@ -98,6 +106,7 @@
               $ubah_v = $ubah_v . "_" . $unik_f . ".mkv";
               }
               move_uploaded_file($lokasi_f, $ubah_v);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: video');
             break;
           case 'mp4':
@@ -106,6 +115,7 @@
               $ubah_v = $ubah_v . "_" . $unik_f . ".mp4";
               }
               move_uploaded_file($lokasi_f, $ubah_v);
+							$_SESSION['upld'] = "Berhasil unggah $nama_f"
               header('Location: video');
             break;
             case 'apk':
@@ -114,6 +124,7 @@
                 $ubah_a = $ubah_a . "_" . $unik_f . ".apk";
                 }
                 move_uploaded_file($lokasi_f, $ubah_a);
+								$_SESSION['upld'] = "Berhasil unggah $nama_f"
                 header('Location: apk');
             break;
           default:

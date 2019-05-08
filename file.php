@@ -1,6 +1,10 @@
 <?php require_once "inc/core.php"; ?>
 <?php include ('header.php'); ?>
 <div class="mb-4"></div>
+<?php if(isset($_SESSION['upld'])){
+  echo $_SESSION['upld'];
+  uset($_SESSION['upld']);
+} ?>
   <?php
     $resource = opendir("upload/zip");
     while (($entry = readdir($resource)) !== false){
