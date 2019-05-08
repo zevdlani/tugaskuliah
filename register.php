@@ -39,7 +39,7 @@
 ?>
 <?php include ('header.php'); ?>
   <div class="kotak-besar">
-		<?php if($error != ''){ ?>
+		<?php if(isset($error)){ ?>
 			<div class="alert alert-danger text-center">
 				<?php echo $error; ?>
 			</div>
