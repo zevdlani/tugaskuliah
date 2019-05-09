@@ -17,6 +17,7 @@
 	  			if( cek_mail($mail) == 0){
 	  				if( !empty(trim($user) ) && !empty(trim($pass)) && !empty(trim($mail)) ){
 				  		if(register_user($user, $pass, $mail)){
+								$_SESSION['berhsl'] = "Berhasil daftar, silahkan masuk";
 								header('Location: login');
 				  		} else $_SESSION['error'] = "Gagal daftar, silahlan coba lagi";
 						} else $_SESSION['error'] = "Tidak boleh ada yang kosong";
@@ -42,7 +43,7 @@
 					<input class="form-control mb-3" type="email" name="email" placeholder="Email">
 					<input class="btn btn-secondary mb-2" type="submit" name="submit" value="Daftar">
 				</form>
-				<div class="reglog mt-2">Sudah punya akun? Silahkan <a href="/login">Masuk</a></div>
+				<div class="reglog mt-2">Sudah punya akun? Silahkan <a href="login">Masuk</a></div>
 			</div>
 		</div>
 	</div>

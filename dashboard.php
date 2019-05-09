@@ -142,7 +142,7 @@
 			</div>
 		<?php } ?>
 		<div class="upload text-center" id="upload">
-			<form action="dashboard.php" method="post" enctype="multipart/form-data">
+			<form action="dashboard" method="post" enctype="multipart/form-data">
 				<input class="btn btn-outline-secondary" type="file" name="file"><br>
 				<input class="btn btn-secondary mt-3" type="submit" name="submit" value="Unggah">
 			</form>

@@ -11,8 +11,8 @@
       <div class="col-6 sm">
       </div>
       <div class="col-6 sm">
-        <h2> Tugas Kuliah</h2>
-        <p>Upload Tugas Kalian</p>
+        <h1><a href="dashboard">Unggah</a></h1>
+        <p>Tugas Kalian</p>
       </div>
     </div>
 </div>
