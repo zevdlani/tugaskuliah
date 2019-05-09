@@ -43,6 +43,7 @@
 				        <a class="nav-link" href="register"> Daftar</a>
 				      </li><?php } ?>
 				      <?php if( isset($_SESSION['dat_user']) ){ ?>
+              <li class="nav-link"><?php echo $_SESSION['dat_user']; ?></li>
 				      <li class="nav-item">
 				        <a class="nav-link" href="inc/logout">Keluar</a>
 				      </li><?php } ?>
