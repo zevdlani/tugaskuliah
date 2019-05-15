@@ -1,13 +1,14 @@
 <?php
-	function register_user($user, $pass, $mail){
+	function register_user($mail, $pass, $user){
 		global $fxnt;
 
-		$user = low(escape($user));
-		$pass = escape($pass);
 		$mail = low(escape($mail));
+		$pass = escape($pass);
+		$user = low(escape($user));
+
 
 		$pass = password_hash($pass, PASSWORD_DEFAULT);
-		$query = "INSERT INTO users (username, password, email) VALUES ('$user', '$pass', '$mail')";
+		$query = "INSERT INTO users (email, password, username) VALUES ('$mail', '$pass', '$user')";
 
 		if(mysqli_query($fxnt, $query)) return true;
 		return false;
@@ -35,16 +36,15 @@
 		if( $result = mysqli_query($fxnt, $query) ){
 			return mysqli_num_rows($result);
 		}
-
 	}
 
-	function cek_data($user, $pass){
+	function cek_data($mail, $pass){
 		global $fxnt;
 
-		$user = escape($user);
+		$mail = escape($mail);
 		$pass = escape($pass);
 
-		$query = "SELECT password FROM users WHERE username = '$user'";
+		$query = "SELECT password FROM users WHERE email = '$mail'";
 		$result = mysqli_query($fxnt, $query);
 		$hash = mysqli_fetch_assoc($result)['password'];
 
@@ -61,8 +61,8 @@
 		return strtolower($data);
 	}
 
-	function direct_login($user){
-		$_SESSION['dat_user'] = $user;
+	function direct_das($mail){
+		$_SESSION['dat_user'] = $mail;
 		header('Location: dashboard');
 	}
 ?>

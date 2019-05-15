@@ -7,13 +7,15 @@
 	if( isset($_SESSION['dat_user']) ) header('Location: dashboard');
 
 	if( isset($_POST['submit']) ){
-	  	$user = $_POST['username'];
+	  	$mail = $_POST['email'];
 	  	$pass = $_POST['password'];
-		if( cek_user($user) != 0) {
-			if( cek_data($user, $pass) ){
-				direct_login($user);
-			} else $_SESSION['error'] = "Password salah";
-		} else $_SESSION['error'] = "Username salah";
+		if( !empty($mail) && !empty($pass)){
+			if( cek_mail($mail) != 0) {
+				if( cek_data($mail, $pass) ){
+					direct_das($mail);
+				} else $_SESSION['error'] = "Password salah";
+			} else $_SESSION['error'] = "Email salah";
+		} else $_SESSION['error'] = "Tidak boleh ada yang kosong";
 	}
 ?>
 <?php include ('header.php'); ?>
@@ -32,7 +34,7 @@
 		<?php } ?>
 		<div class="kotak">
 			<form class="kotak-form" method="post" action="login">
-				<input class="form-control mb-2" type="text" name="username" placeholder="Username">
+				<input class="form-control mb-2" type="text" name="email" placeholder="Email">
 				<input class="form-control mb-3" type="password" name="password" placeholder="Password">
 				<input class="btn btn-secondary mb-2" type="submit" name="submit" value="Login">
 			</form>

@@ -17,7 +17,6 @@
     $nama_f = $_FILES['file']['name'];
     $lokasi_f = $_FILES['file']['tmp_name'];
     $size_f = $_FILES['file']['size'];
-    $type_f = $_FILES['file']['type'];
     $error_f = $_FILES['file']['error'];
     $format = pathinfo($nama_f, PATHINFO_EXTENSION);
     $ubah_g = 'upload/img/' . $nama_f;
@@ -38,7 +37,7 @@
 							$_SESSION['upld'] = "Berhasil unggah $nama_f";
               header('Location: gambar');
             break;
-          case 'png':
+          case 'jfif':
             if(file_exists($ubah_g)){
               $ubah_g = str_replace(".png", "", $ubah_g);
               $ubah_g = $ubah_g . "_" . $unik_f . ".png";
